@@ -1,5 +1,6 @@
 ﻿
 @model Treehouse.FitnessFrog.Models.Entry
+@using Treehouse.FitnessFrog.Models
 
 @{
     ViewBag.Title = "Add Entry";
@@ -32,7 +33,18 @@
 
             <div class="form-group">
                 @Html.LabelFor(m => m.Intensity, new { @class = "control-lable" })
-                @Html.TextBoxFor(m => m.Intensity, new { @class = "form-control" })
+                <div>
+                    <lable class="radio-inline">
+                        @Html.RadioButtonFor(m => m.Intensity, Entry.IntensityLevel.Low) @Entry.IntensityLevel.Low
+                    </lable>
+                    <lable class="radio-inline">
+                        @Html.RadioButtonFor(m => m.Intensity, Entry.IntensityLevel.Medium) @Entry.IntensityLevel.Medium
+                    </lable>
+                    <lable class="radio-inline">
+                        @Html.RadioButtonFor(m => m.Intensity, Entry.IntensityLevel.High) @Entry.IntensityLevel.High
+                    </lable>
+
+                </div>
             </div>
 
             <div class="form-group">
